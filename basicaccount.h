@@ -15,7 +15,7 @@ struct deposit {
 
 class BasicAccount
 {
-private:
+protected:
     string name;
     int acc_number;
     double balance;
@@ -24,18 +24,20 @@ private:
     short max_dep_count;
 
     bool isDepExist(string &name);
+
+    //set
+    void SetName(string name){this->name = name;}
+    void SetAccNum(int acc_number){this->acc_number = acc_number;}
 public:
     BasicAccount(string member_name, int accout_number, short max_deposits = 5);
     BasicAccount();
     ~BasicAccount();
 
-    //set
-    void SetName(string name){this->name = name;}
-    void SetAccNum(int acc_number){this->acc_number = acc_number;}
+
 
     bool CreateDep(string name, double dep_balance = 0);
     bool FillDep(string name, double add_money);
-    bool ShowDeps(const string name = "");
+    virtual bool ShowDeps(const string name = "");
 
 
 };

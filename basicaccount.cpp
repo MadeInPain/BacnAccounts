@@ -67,7 +67,7 @@ bool BasicAccount::ShowDeps(const std::string name ){
     else{
         for(int i = 0; i < dep_count; i++){
             if(pt[i].dep_name == name){
-                cout << "dep " << "name" << "| $" << pt[i].dep_balance << endl;
+                cout << "dep " << name << "| $" << pt[i].dep_balance << endl;
                 res = true;
                 return res;
             }
